@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Finance Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+
+<div id="loginPage" class="centerBox">
+
+<h2>Login</h2>
+
+<input id="loginUser" placeholder="Username">
+<input id="loginPass" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p>Don't have account?</p>
+
+<button onclick="showSignup()">Signup</button>
+
+</div>
+
+
+<!-- SIGNUP PAGE -->
+
+<div id="signupPage" class="centerBox hidden">
+
+<h2>Create Account</h2>
+
+<input id="signupUser" placeholder="Username">
+<input id="signupPass" type="password" placeholder="Password">
+
+<button onclick="signup()">Create</button>
+
+<button onclick="showLogin()">Back</button>
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="hidden">
+
+<header>
+
+<h1>💰 Smart Finance Dashboard</h1>
+
+<button onclick="toggleTheme()">🌙 Toggle Theme</button>
+
+<button onclick="logout()">Logout</button>
+
+</header>
+
+
+<div class="container">
+
+<!-- ADD TRANSACTION -->
+
+<div class="card">
+
+<h3>Add Transaction</h3>
+
+<input id="desc" placeholder="Description">
+
+<input id="amount" type="number" placeholder="Amount">
+
+<select id="type">
+<option value="income">Income</option>
+<option value="expense">Expense</option>
+</select>
+
+<select id="category">
+
+<option>Food</option>
+<option>Travel</option>
+<option>Shopping</option>
+<option>Bills</option>
+<option>Other</option>
+
+</select>
+
+<input id="date" type="date">
+
+<button onclick="addTransaction()">Add</button>
+
+</div>
+
+
+<!-- BUDGET -->
+
+<div class="card">
+
+<h3>Budget Limit</h3>
+
+<input id="budgetInput" type="number" placeholder="Monthly Budget">
+
+<button onclick="setBudget()">Save Budget</button>
+
+<p id="budgetAlert"></p>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="card">
+
+<h3>Search Transaction</h3>
+
+<input id="searchInput" placeholder="Search..." onkeyup="searchTransaction()">
+
+<ul id="searchResult"></ul>
+
+</div>
+
+</div>
+
+
+<!-- BALANCE -->
+
+<div class="summary">
+
+<p>Total Income ₹<span id="income">0</span></p>
+<p>Total Expense ₹<span id="expense">0</span></p>
+<p>Savings ₹<span id="balance">0</span></p>
+
+</div>
+
+
+<!-- TRANSACTION TABLE -->
+
+<div class="tableBox">
+
+<h2>Transaction History</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Description</th>
+<th>Amount</th>
+<th>Type</th>
+<th>Category</th>
+<th>Date</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="tableData"></tbody>
+
+</table>
+
+</div>
+
+
+<!-- CHARTS -->
+
+<div class="charts">
+
+<canvas id="financeChart"></canvas>
+
+<canvas id="categoryChart"></canvas>
+
+<canvas id="predictionChart"></canvas>
+
+</div>
+
+
+<!-- AI INSIGHT -->
+
+<div class="insight">
+
+<h2>📊 AI Spending Insight</h2>
+
+<p id="insightText"></p>
+
+</div>
+
+
+<button onclick="exportCSV()">Export Report</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
