@@ -1,200 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Smart Finance Dashboard</title>
+<title>Akshay Gopisetti - Personal Webpage</title>
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<!-- Bootstrap utilities -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- LOGIN PAGE -->
-
-<div id="loginPage" class="centerBox">
-
-<h2>Login</h2>
-
-<input id="loginUser" placeholder="Username">
-<input id="loginPass" type="password" placeholder="Password">
-
-<button onclick="login()">Login</button>
-
-<p>Don't have account?</p>
-
-<button onclick="showSignup()">Signup</button>
-
-</div>
-
-
-<!-- SIGNUP PAGE -->
-
-<div id="signupPage" class="centerBox hidden">
-
-<h2>Create Account</h2>
-
-<input id="signupUser" placeholder="Username">
-<input id="signupPass" type="password" placeholder="Password">
-
-<button onclick="signup()">Create</button>
-
-<button onclick="showLogin()">Back</button>
-
-</div>
-
-
-<!-- DASHBOARD -->
-
-<div id="dashboard" class="hidden">
-
-<header>
-
-<h1>💰 Smart Finance Dashboard</h1>
-
-<button onclick="toggleTheme()">🌙 Toggle Theme</button>
-
-<button onclick="logout()">Logout</button>
-
+<header class="header">
+<h1>Akshay Gopisetti</h1>
+<p>Roll No: 2520030363 | Cluster: 2</p>
 </header>
 
+<nav>
+<a href="#about">About</a>
+<a href="#concepts">Internet Concepts</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<div class="container">
+<section id="about" class="container">
 
-<!-- ADD TRANSACTION -->
+<h2>About Me</h2>
 
-<div class="card">
+<img src="akshay.jpg" alt="Akshay Photo" class="profile">
 
-<h3>Add Transaction</h3>
+<p>
+Hello! I am <strong>Akshay Gopisetti</strong>, a student from KLH University.
+This webpage demonstrates Internet fundamentals, HTML, CSS, JavaScript and DOM
+concepts as part of a web technologies assignment.
+</p>
 
-<input id="desc" placeholder="Description">
+</section>
 
-<input id="amount" type="number" placeholder="Amount">
+<section id="concepts" class="container">
 
-<select id="type">
-<option value="income">Income</option>
-<option value="expense">Expense</option>
-</select>
+<h2>Internet & Web Concepts</h2>
 
-<select id="category">
-
-<option>Food</option>
-<option>Travel</option>
-<option>Shopping</option>
-<option>Bills</option>
-<option>Other</option>
-
-</select>
-
-<input id="date" type="date">
-
-<button onclick="addTransaction()">Add</button>
-
-</div>
-
-
-<!-- BUDGET -->
-
-<div class="card">
-
-<h3>Budget Limit</h3>
-
-<input id="budgetInput" type="number" placeholder="Monthly Budget">
-
-<button onclick="setBudget()">Save Budget</button>
-
-<p id="budgetAlert"></p>
-
-</div>
-
-
-<!-- SEARCH -->
-
-<div class="card">
-
-<h3>Search Transaction</h3>
-
-<input id="searchInput" placeholder="Search..." onkeyup="searchTransaction()">
-
-<ul id="searchResult"></ul>
-
-</div>
-
-</div>
-
-
-<!-- BALANCE -->
-
-<div class="summary">
-
-<p>Total Income ₹<span id="income">0</span></p>
-<p>Total Expense ₹<span id="expense">0</span></p>
-<p>Savings ₹<span id="balance">0</span></p>
-
-</div>
-
-
-<!-- TRANSACTION TABLE -->
-
-<div class="tableBox">
-
-<h2>Transaction History</h2>
-
-<table>
-
-<thead>
-
+<table class="table table-bordered">
 <tr>
+<th>Concept</th>
 <th>Description</th>
-<th>Amount</th>
-<th>Type</th>
-<th>Category</th>
-<th>Date</th>
-<th>Action</th>
 </tr>
 
-</thead>
+<tr>
+<td>HTTP / HTTPS</td>
+<td>Protocols used for communication between browser and server</td>
+</tr>
 
-<tbody id="tableData"></tbody>
+<tr>
+<td>Client Server Architecture</td>
+<td>Browser sends request and server responds with data</td>
+</tr>
+
+<tr>
+<td>Web Hosting</td>
+<td>Stores website files on servers so they can be accessed online</td>
+</tr>
+
+<tr>
+<td>Domain Name</td>
+<td>Human readable name like example.com</td>
+</tr>
 
 </table>
 
-</div>
+</section>
 
+<section id="skills" class="container">
 
-<!-- CHARTS -->
+<h2>My Skills</h2>
 
-<div class="charts">
+<ul id="skillList">
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Web Development</li>
+</ul>
 
-<canvas id="financeChart"></canvas>
+<button onclick="addSkill()">Add Skill</button>
 
-<canvas id="categoryChart"></canvas>
+</section>
 
-<canvas id="predictionChart"></canvas>
+<section class="container">
 
-</div>
+<h2>Performance Example</h2>
 
+<p>Example of JavaScript array operations:</p>
 
-<!-- AI INSIGHT -->
+<button onclick="showNumbers()">Show Calculations</button>
 
-<div class="insight">
+<p id="output"></p>
 
-<h2>📊 AI Spending Insight</h2>
+</section>
 
-<p id="insightText"></p>
+<section id="contact" class="container">
 
-</div>
+<h2>Contact Form</h2>
 
+<form id="contactForm">
 
-<button onclick="exportCSV()">Export Report</button>
+<label>Name</label>
+<input type="text" required>
 
-</div>
+<label>Email</label>
+<input type="email" required>
+
+<label>Message</label>
+<textarea required></textarea>
+
+<button type="submit">Send</button>
+
+</form>
+
+</section>
+
+<footer>
+<p>© 2026 Akshay Gopisetti | KLH University</p>
+</footer>
 
 <script src="script.js"></script>
 
